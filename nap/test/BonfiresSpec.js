@@ -54,9 +54,9 @@ describe("Bonfires", function() {
         expect(bfData.data.challenges[0]).not.to.be.null;
     });
 
-    it("should prep the KBase", function() {
-        KBase.initSync();
-    }),
+    //it("should prep the KBase", function() {
+    //    KBase.initSync();
+    //}),
 
     it("should find a bonfire by roomname", function() {
         var bfName = 'bonfire-factorialize-a-number';
@@ -114,11 +114,11 @@ describe("Bonfires", function() {
         expect(res).to.include("```js \nfunction");
     });
 
-    it("should find raw wiki hints for bonfire from KBase", function() {
-        var bfName = "Bonfire Factorialize a Number";
-        var hints = KBase.getWikiHints(bfName);
-        expect(hints).to.be.instanceOf(Array);
-    });
+    //it("should find raw wiki hints for bonfire from KBase", function() {
+    //    var bfName = "Bonfire Factorialize a Number";
+    //    var hints = KBase.getWikiHints(bfName);
+    //    expect(hints).to.be.instanceOf(Array);
+    //});
 
 
     it("should respond to hints command", function() {

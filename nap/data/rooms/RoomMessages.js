@@ -14,39 +14,39 @@ var _ = require('lodash-node');
 // TODO - add these to all of the rooms
 // this is easier for people to add content to as they don't have to add to two lists
 var AllRoomMessages = [
-    {
-        // regex: /help.*bonfire:?s?[.?]$/i,
-        regex: /.*help.*bonfire:?s?/i,
-        text: " > type `bonfire name` to get some info on that bonfire. And check [HelpBonfires chatroom](https://gitter.im/FreeCodeCamp/HelpBonfires)",
-        not: 'freecodecamp/HelpBonfires'  // optional to skip for this room
-    },
+    //{
+    //    // regex: /help.*bonfire:?s?[.?]$/i,
+    //    regex: /.*help.*bonfire:?s?/i,
+    //    text: " > type `bonfire name` to get some info on that bonfire. And check [HelpBonfires chatroom](https://gitter.im/FreeCodeCamp/HelpBonfires)",
+    //    not: 'freecodecamp/HelpBonfires'  // optional to skip for this room
+    //},
 
-    {
-        regex: /botx/i,
-        text: "> you called?"
-    },
+    //{
+    //    regex: /botx I love you/i,
+    //    text: "> :heart:"
+    //},
 
-    {
-        regex: /\btroll\b/i,
-        text: "> :trollface: troll problems? [notify admins here](https://gitter.im/camperbot/admins)"
-    },
-    {
-        regex: /allyourbase/,
-        text: "![all your base](https://files.gitter.im/FreeCodeCamp/CoreTeam/Bw51/imgres.jpg)"
-    },
-    {
-        regex: /'''/,
-        text: "> :bulb: to format code use backticks! ``` [more info](https://github.com/freecodecamp/freecodecamp/wiki/code-formatting)"
-    },
-    {
-        regex: /holler/i,
-        text: "> holler back!",
-        chance: 1   // only say this 50% of the time
-    },
-    {
-        regex: /\bth?a?n?[xk]s?q?\b/gim,
-        func: BotCommands.thanks
-    }
+    //{
+    //    regex: /\btroll\b/i,
+    //    text: "> :trollface: troll problems? [notify admins here](https://gitter.im/camperbot/admins)"
+    //},
+    //{
+    //    regex: /allyourbase/,
+    //    text: "![all your base](https://files.gitter.im/FreeCodeCamp/CoreTeam/Bw51/imgres.jpg)"
+    //},
+    //{
+    //    regex: /'''/,
+    //    text: "> :bulb: to format code use backticks! ``` [more info](https://github.com/freecodecamp/freecodecamp/wiki/code-formatting)"
+    //},
+    //{
+    //    regex: /holler/i,
+    //    text: "> holler back!",
+    //    chance: 1   // only say this 50% of the time
+    //},
+    //{
+    //    regex: /\bth?a?n?[xk]s?q?\b/gim,
+    //    func: BotCommands.thanks
+    //}
 ];
 
 var RoomMessages = {

@@ -20,9 +20,9 @@ function clog(msg, obj) {
 
 describe("IO", function () {
 
-    it("should load the KBase", function() {
-        var p = KBase.initSync();
-    });
+    //it("should load the KBase", function() {
+    //    var p = KBase.initSync();
+    //});
 
     it("command: help", function () {
         var res, msg;

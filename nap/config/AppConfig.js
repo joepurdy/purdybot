@@ -16,7 +16,7 @@ var AppConfig = {
     org: "bothelp",
     testUser: "bothelp",
     // so bot doesnt get in a loop replying itself
-    botlist: ["bothelp", "camperbot", "YOUR_GITHUB_ID", "demobot"],
+    botlist: ["bothelp", "camperbot", "purdybot"],
     webuser: "webuser",
     wikiHost: "https://github.com/freecodecamp/freecodecamp/wiki/",
     gitterHost: "https://gitter.im/",
@@ -103,46 +103,17 @@ var AppConfig = {
 
 
 var envConfigs = {
-
-    // replace this with your own ID
-    YOUR_GITHUB_ID: {
-        botname: "YOUR_GITHUB_ID",
-        appHost: "http://localhost:7000",
-        apiServer: "freecodecamp.com",
-        appRedirectUrl: "http://localhost:7891/login/callback",
-    },
-
-    demobot: {
-        botname: "demobot",
-        appHost: "http://localhost:7000",
-        apiServer: "freecodecamp.com",
-        appRedirectUrl: "http://localhost:7891/login/callback",
-    },
-
-    test: {
-        botname: "bothelp",
-        appHost: "http://localhost:7000",
-        apiServer: "freecodecamp.com",
-        appRedirectUrl: "http://localhost:7891/login/callback",
-    },
-
     local: {
-        botname: "bothelp",
+        botname: "purdybot",
         appHost: "http://localhost:7000",
         apiServer: "freecodecamp.com",
-        appRedirectUrl: "http://localhost:7891/login/callback",
-    },
-    beta: {
-        botname: "bothelp",
-        appHost: "http://localhost:7000",
-        apiServer: "beta.freecodecamp.com",
-        appRedirectUrl: "http://localhost:7891/login/callback",
+        appRedirectUrl: "http://localhost:7891/login/callback"
     },
     prod: {
-        botname: "camperbot",
-        appHost: "http://bot.freecodecamp.com",
+        botname: "purdybot",
+        appHost: "http://bot.poweredbypurdy.com",
         apiServer: "freecodecamp.com",
-        appRedirectUrl: "http://bot.freecodecamp.com/login/callback",
+        appRedirectUrl: "http://bot.poweredbypurdy.com/login/callback"
     }
 };
 

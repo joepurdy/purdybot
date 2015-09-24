@@ -18,7 +18,7 @@ var stringy = require("stringy");
 var _ = require("lodash-node");
 
 var GBot = require("../../lib/bot/GBot.js"),
-    KBase = require("../bot/KBase"),
+    //KBase = require("../bot/KBase"),
     Utils = require("../../lib/utils/Utils"),
     TextLib = require("../../lib/utils/TextLib"),
     AppConfig = require("../../config/AppConfig"),
@@ -74,75 +74,107 @@ var BotCommands = {
         return res;
     },
 
-    cbot: function(input, bot) {
+    pbot: function(input, bot) {
         switch (input.params) {
             case 'version':
-                return this.botversion(input, bot);
+                return this.pbotversion(input, bot);
 
             case 'status':
                 Utils.log("input", input);
-                var status = this.botstatus(input, bot);
+                var status = this.pbotstatus(input, bot);
                 Utils.clog('status', status);
                 return status;
 
+            case 'i love you':
+                var username = input.message.model.fromUser.username;
+                if (username == "joepurdy") {
+                    return "^.^ I love you too @" + username;
+                } else if (username == "Shifthawke") {
+                    return "^.^ I love you too @" + username;
+                } else {
+                    return "0.0 Maybe we should just stay friends @" + username;
+                }
+
             default:
-                return "you called?";
+                return "you called??";
         }
+    },
+
+    open: function(input) {
+        switch (input.params) {
+            case 'the pod bay doors':
+                var username = input.message.model.fromUser.username;
+                return "I'm sorry, " + "@" + username + ". I'm afraid I can't do that.";
+        }
+    },
+
+    '@purdybot': function(input) {
+        switch (input.params) {
+            case 'i love you':
+                var username = input.message.model.fromUser.username;
+                if (username == "joepurdy") {
+                    return "^.^ I love you too @" + username;
+                } else if (username == "Shifthawke") {
+                    return "^.^ I love you too @" + username;
+                } else {
+                    return "0.0 Maybe we should just stay friends @" + username;
+                }
+            }
     },
 
     // very simple example function showing how to parse a message and respond
     // 'echo' is already a botCommand
-    echo: function(input, bot) {
-        var username = input.message.model.fromUser.username;
-        return "@" + username + " said: " + input.message.model.text;
-    },
-
-    echojson: function(input, bot) {
-        var jsonString = stringy.stringify(input); // avoid circular refs
-        console.log(jsonString);
-        var safeObj = JSON.parse(jsonString);
-        console.log(safeObj);
-        var pretty = JSON.stringify(safeObj, null, 2);
-        var str = "```json" + pretty + "```";
-        return str;
-    },
+    //echo: function(input, bot) {
+    //    var username = input.message.model.fromUser.username;
+    //    return "@" + username + " said: " + input.message.model.text;
+    //},
+    //
+    //echojson: function(input, bot) {
+    //    var jsonString = stringy.stringify(input); // avoid circular refs
+    //    console.log(jsonString);
+    //    var safeObj = JSON.parse(jsonString);
+    //    console.log(safeObj);
+    //    var pretty = JSON.stringify(safeObj, null, 2);
+    //    var str = "```json" + pretty + "```";
+    //    return str;
+    //},
     
-    botversion: function(){
+    pbotversion: function(){
         return "botVersion: " + AppConfig.botVersion;
     },
 
-    botstatus: function (input, bot) {
+    pbotstatus: function (input, bot) {
         var msg = "All bot systems are go!  \n";
-        msg += this.botversion() + newline;
-        msg += this.botenv() + newline;
+        msg += this.pbotversion() + newline;
+        msg += this.pbotenv() + newline;
         msg += "botname: " + AppConfig.getBotName() + newline;
         return msg;
     },
 
-    botenv: function(input, bot) {
+    pbotenv: function(input, bot) {
         var str = "env: " + AppConfig.serverEnv;
         return str;
     },
 
-    archive: function(input, bot) {
-        var str, roomName, shortName, roomUri, timeStamp;
-        roomName = input.message.room.name;
-        shortName = InputWrap.roomShortName(input);
-
-        roomUri = AppConfig.gitterHost + roomName + "/archives/" ;
-        str = "Archives for **" + shortName + "**" + newline;
-        str += "\n- [All Time](" + roomUri + "all)";
-
-        timeStamp = Utils.timeStamp("yesterday");
-        str += "\n- [Yesterday](" + roomUri + timeStamp + ")";
-
-        // tlog(str);
-
-        return str;
-        // https://gitter.im/dcsan/botzy/archives/all
-        // date ; //# => Thu Mar 31 2011 11:14:50 GMT+0200 (CEST)
-        // https://gitter.im/bothelp/GeneralChat/archives/2015/07/25
-    },
+    //archive: function(input, bot) {
+    //    var str, roomName, shortName, roomUri, timeStamp;
+    //    roomName = input.message.room.name;
+    //    shortName = InputWrap.roomShortName(input);
+    //
+    //    roomUri = AppConfig.gitterHost + roomName + "/archives/" ;
+    //    str = "Archives for **" + shortName + "**" + newline;
+    //    str += "\n- [All Time](" + roomUri + "all)";
+    //
+    //    timeStamp = Utils.timeStamp("yesterday");
+    //    str += "\n- [Yesterday](" + roomUri + timeStamp + ")";
+    //
+    //    // tlog(str);
+    //
+    //    return str;
+    //    // https://gitter.im/dcsan/botzy/archives/all
+    //    // date ; //# => Thu Mar 31 2011 11:14:50 GMT+0200 (CEST)
+    //    // https://gitter.im/bothelp/GeneralChat/archives/2015/07/25
+    //},
 
     init: function (bot) {
         // FIXME - this is sketchy storing references like a global
@@ -156,56 +188,56 @@ var BotCommands = {
     },
 
     // help on its own we return `help bothelp`
-    help: function (input, bot) {
-        if (this.tooNoisy(input, bot)) {
-            return null;
-        }
-        // input;
-        // var msg = TestHelper.makeInputFromString("help help");
-        // return "try this: `wiki $topic` or topics for a list";
-        // return bot.findAnyReply(msg);
-        if (input.params) {
-            return this.wiki(input, bot);
-        } else {
-            var keyword = "camperbot";
-            var topicData = KBase.getTopicData(keyword);
-            var str = topicData.shortData;
-            str += this.wikiFooter(keyword);
-            return (str);
-        }
-    },
+    //help: function (input, bot) {
+    //    if (this.tooNoisy(input, bot)) {
+    //        return null;
+    //    }
+    //    // input;
+    //    // var msg = TestHelper.makeInputFromString("help help");
+    //    // return "try this: `wiki $topic` or topics for a list";
+    //    // return bot.findAnyReply(msg);
+    //    if (input.params) {
+    //        return this.wiki(input, bot);
+    //    } else {
+    //        var keyword = "camperbot";
+    //        var topicData = KBase.getTopicData(keyword);
+    //        var str = topicData.shortData;
+    //        str += this.wikiFooter(keyword);
+    //        return (str);
+    //    }
+    //},
 
-    menu: function (input, bot) {
-        var msg = "type help for a list of things the bot can do";
-        return msg;
-    },
+    //menu: function (input, bot) {
+    //    var msg = "type help for a list of things the bot can do";
+    //    return msg;
+    //},
 
     // TODO - sort alphabetically
-    rooms: function (input, bot) {
-        var uri, link, str, roomNames, icon;
-        var baseList = RoomData.rooms();   // bot.roomList doesnt show private / meta data
-
-        // https://gitter.im/FreeCodeCamp
-        str = "## rooms\nSee all the FreeCodeCamp rooms at [gitter.im/FreeCodeCamp/rooms](https://gitter.im/orgs/FreeCodeCamp/rooms)\n"
-        //
-        //roomNames = baseList.map(function (rm) {
-        //    clog("room", rm);
-        //    if (rm.private) {
-        //        return "----";
-        //    } else {
-        //        uri = "https://gitter.im/" + rm.name;
-        //        icon = ":" + (rm.icon || "speech_balloon") + ":";
-        //        link = "\n " + icon + " [" + rm.name + "](" + uri + ")";
-        //        return link;
-        //    }
-        //});
-
-        //trim so we dont get banned
-        //roomNames = roomNames.slice(0, AppConfig.MAX_WIKI_LINES);
-        //str += roomNames.join(" ");
-        str += "Or check [this wiki article](https://github.com/freecodecamp/freecodecamp/wiki/official-free-code-camp-chat-rooms) for a shortlist"
-        return str;
-    },
+    //rooms: function (input, bot) {
+    //    var uri, link, str, roomNames, icon;
+    //    var baseList = RoomData.rooms();   // bot.roomList doesnt show private / meta data
+    //
+    //    // https://gitter.im/FreeCodeCamp
+    //    str = "## rooms\nSee all the FreeCodeCamp rooms at [gitter.im/FreeCodeCamp/rooms](https://gitter.im/orgs/FreeCodeCamp/rooms)\n"
+    //    //
+    //    //roomNames = baseList.map(function (rm) {
+    //    //    clog("room", rm);
+    //    //    if (rm.private) {
+    //    //        return "----";
+    //    //    } else {
+    //    //        uri = "https://gitter.im/" + rm.name;
+    //    //        icon = ":" + (rm.icon || "speech_balloon") + ":";
+    //    //        link = "\n " + icon + " [" + rm.name + "](" + uri + ")";
+    //    //        return link;
+    //    //    }
+    //    //});
+    //
+    //    //trim so we dont get banned
+    //    //roomNames = roomNames.slice(0, AppConfig.MAX_WIKI_LINES);
+    //    //str += roomNames.join(" ");
+    //    str += "Or check [this wiki article](https://github.com/freecodecamp/freecodecamp/wiki/official-free-code-camp-chat-rooms) for a shortlist"
+    //    return str;
+    //},
 
     // gitter limits to first 10 lines or so
     // TODO - pagination
@@ -227,19 +259,19 @@ var BotCommands = {
     },
     */
 
-    find: function (input, bot) {
-        debugger;
-        var str = "find **" + input.params + "**\n";
-        var shortList = KBase.getTopicsAsList(input.params);
-        bot.context = {
-            state: "finding",
-            commands: shortList.commands
-        };
-        str += shortList;
-        //clog("find", str);
-        bot.makeListOptions(str);
-        return (str);
-    },
+    //find: function (input, bot) {
+    //    debugger;
+    //    var str = "find **" + input.params + "**\n";
+    //    var shortList = KBase.getTopicsAsList(input.params);
+    //    bot.context = {
+    //        state: "finding",
+    //        commands: shortList.commands
+    //    };
+    //    str += shortList;
+    //    //clog("find", str);
+    //    bot.makeListOptions(str);
+    //    return (str);
+    //},
 
     commands: function (input, bot) {
         var str = "## commands:\n- ";
@@ -253,29 +285,29 @@ var BotCommands = {
     //     BotCommands.bot.scanRooms();
     //     return "rejoined";
     // },
-    music: function (input, bot) {
-        var str = "## Music!";
-        str += "\n http://plug.dj/freecodecamp";
-        return str;
-    },
+    //music: function (input, bot) {
+    //    var str = "## Music!";
+    //    str += "\n http://plug.dj/freecodecamp";
+    //    return str;
+    //},
 
-    announce: function(input, bot) {
-        var parts = input.params.split(' ');
-        var roomName = parts[0]
-        var text = parts.join(" ");
-        this.bot.sayToRoom(text, roomName)
-    },
+    //announce: function(input, bot) {
+    //    var parts = input.params.split(' ');
+    //    var roomName = parts[0]
+    //    var text = parts.join(" ");
+    //    this.bot.sayToRoom(text, roomName)
+    //},
 
-    rollem: function (input, bot) {
-        var fromUser = "@" + input.message.model.fromUser.username;
-        var str = fromUser + " says enjoy!";
-        str += "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-        return str;
-    },
+    //rollem: function (input, bot) {
+    //    var fromUser = "@" + input.message.model.fromUser.username;
+    //    var str = fromUser + " says enjoy!";
+    //    str += "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    //    return str;
+    //},
 
-    camperCount: function (input, bot) {
-        return "WIP camperCount";
-    },
+    //camperCount: function (input, bot) {
+    //    return "WIP camperCount";
+    //},
 
     //search: function (input, bot) {
         //var data = KBase.search(input.params);
@@ -287,50 +319,58 @@ var BotCommands = {
         //return str;
     //},
 
-    welcome: function (input, bot) {
-        var str;
-        if (input.params && input.params.match(/world/i)) {
-            str = "## welcome to FreeCodeCamp @" + input.message.model.fromUser.username + "!";
-            return str;
-        }
-        // str += "\n type `help` for some things the bot can do.";
-    },
+    //welcome: function (input, bot) {
+    //    var str;
+    //    if (input.params && input.params.match(/world/i)) {
+    //        str = "## welcome to FreeCodeCamp @" + input.message.model.fromUser.username + "!";
+    //        return str;
+    //    }
+    //    // str += "\n type `help` for some things the bot can do.";
+    //},
+    //
+    //hello: function(input, bot) {
+    //    return (this.welcome(input, bot) );
+    //},
 
-    hello: function(input, bot) {
-        return (this.welcome(input, bot) );
-    },
-
-    //DEMO how to add a new 
-    bob: function(input, bot) {
-        console.log("bob input>", input.params);
+    // i'm sorry dave
+    dave: function(input, bot) {
+        console.log("dave input>", input.params);
         console.log("from>", input.message.model.fromUser);
         console.log("mentions>", input.message.model.mentions);
-        return("this is bob @dcsan");
+        return("this is dave @joepurdy");
+    },
+
+    brb: function(input, bot) {
+        var fromUser = input.message.model.fromUser.username.toLowerCase();
+        if (fromUser == "joepurdy") {
+            return "Don't leave me alone with all these people! 0.0";
+        }
     }
+
 
 };
 
 
 // TODO - iterate and read all files in /cmds
-var wiki = require("./cmds/wiki"),
-    thanks = require("./cmds/thanks"),
-    update = require("./cmds/update"),
-    bonfire = require("./cmds/bonfire");
+var thanks = require("./cmds/thanks");
+    //wiki = require("./cmds/wiki"),
+    //update = require("./cmds/update"),
+    //bonfire = require("./cmds/bonfire");
 
-_.merge(BotCommands, wiki, thanks, update, bonfire);
+_.merge(BotCommands, thanks);
 
 
 //aliases
 
-BotCommands.explain = BotCommands.wiki;
-BotCommands.bot = BotCommands.wiki;
-BotCommands.hi = BotCommands.welcome;
+//BotCommands.explain = BotCommands.wiki;
+//BotCommands.bot = BotCommands.wiki;
+//BotCommands.hi = BotCommands.welcome;
 // BotCommands.bothelp = BotCommands.menu;
 // BotCommands.hello = BotCommands.welcome;
-BotCommands.index = BotCommands.topics;
-BotCommands.thank = BotCommands.thanks;
-BotCommands.log = BotCommands.archive;
-BotCommands.archives = BotCommands.archive;
+//BotCommands.index = BotCommands.topics;
+//BotCommands.thank = BotCommands.thanks;
+//BotCommands.log = BotCommands.archive;
+//BotCommands.archives = BotCommands.archive;
 
 // BotCommands['@bothelp hi'] = BotCommands.menu;
 

@@ -27,9 +27,9 @@ function checkInput(text) {
 
 describe("Commands", function () {
 
-    it("should load the KBase", function() {
-        var p = KBase.initSync();
-    });
+    //it("should load the KBase", function() {
+    //    var p = KBase.initSync();
+    //});
 
     it("command: menu", function () {
         var res = Utils.splitParams("menu");

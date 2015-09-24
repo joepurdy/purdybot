@@ -136,6 +136,7 @@ This needs to be changed so you would only join your own rooms, otherwise develo
 This is where you add things that the bot can do. Some commands are broken into separate files such as `cmds/thanks` and `cmds/about`.
 Each command gets a `input` which is a blob of data including what the user entered, and a bot instance.
 
+TODO: Remove this 
 ### KBase.js
 The Knowledge base. This is an interface to all the data in the wiki.
 

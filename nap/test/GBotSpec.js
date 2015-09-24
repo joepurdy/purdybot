@@ -17,9 +17,9 @@ function clog(msg, obj) {
 
 describe("GBot", function () {
 
-    it("should load the KBase before other stuff", function () {
-        var kb = KBase.initSync();
-    });
+    //it("should load the KBase before other stuff", function () {
+    //    var kb = KBase.initSync();
+    //});
 
     it("would be nice if regexes did not give me a headache", function () {
         var res = "help bootstrap".match(/(help|wiki|check) (.*)/);

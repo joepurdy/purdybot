@@ -3,7 +3,7 @@
 // var _ = require("underscore");
 
 var RoomData = require('../../data/RoomData'),
-    Bonfires = require('./Bonfires'),
+    //Bonfires = require('./Bonfires'),
     TextLib = require('../utils/TextLib'),
     Utils= require('../utils/Utils'),
     AppConfig = require('../../config/AppConfig');
@@ -48,14 +48,14 @@ var Rooms = {
         Utils.error("cant find room name:", name);
     },
 
-    isBonfire: function(name) {
-        var room = this.findByName(name);
-        if (room) {
-            //Utils.log("isBonfire>room", room);
-            return(room.isBonfire);
-        }
-        return false;
-    },
+    //isBonfire: function(name) {
+    //    var room = this.findByName(name);
+    //    if (room) {
+    //        //Utils.log("isBonfire>room", room);
+    //        return(room.isBonfire);
+    //    }
+    //    return false;
+    //},
 
     names: function() {
         this.roomList = RoomData.rooms().map(function(room) {
