@@ -1,41 +1,25 @@
 
-## Airtable recommendation
-update: I'm using Airtable to store some data. 
-It's a very cool 'google docs meets DB' service and if you sign up here, I'll get some credit on my account. Thanks!
-https://airtable.com/invite/bV2PbVkk
+# Purdybot!
 
-
-# GitterBot!
-
-This is a full featured bot for Gitter.
+This is a bot for Gitter.
 Main features:
-- integration with github Wiki
-- search, find
 - wrapper for commands
 
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dcsan/gitterbot?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/joepurdy/purdybot?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-The GBot is integrated into FreeCodeCamp
+The PBot is integrated into FreeCodeCamp
 
 Join us in Gitter to discuss!
-https://gitter.im/dcsan/gitterbot
+https://gitter.im/joepurdy/purdybot
 
-# Introducing GitterBot!
+# Introducing PurdyBot!
 
-GitterBot is a full featured bot for Gitter.im First developed to integrate with the chatrooms [for FreeCodeCamp, the largest online bootcamp in the world,](https://twitter.com/FreeCodeCamp/status/627338604134559744) where he supports more than 15,000 users in the main chatroom.
-
-### Github Wiki Search
-
-You can search for articles in a projects github wiki![](http://dcsan.github.io/gitterbot/images/anims/find.gif)
-
-### Share wiki summaries in chat
-
-Use `explain` to pull a wiki summary right into the chat:![](http://dcsan.github.io/gitterbot/images/anims/explain.gif)
+PurdyBot is a full featured bot for Gitter.im Forked from the GitterBot developed [for FreeCodeCamp, the largest online bootcamp in the world.](http://gitter.im/FreeCodeCamp/FreeCodeCamp)
 
 ### Points system
 
-Allow your users to send points to each other to say 'thanks @friend'![](http://dcsan.github.io/gitterbot/images/anims/points.gif)
+Allow your users to send pizza to each other to say 'givepizza @friend'!
 
 ### Fixed messages
 
@@ -43,12 +27,12 @@ Based on scannable expressions, send messages into the chat.
 
 ### Extensible
 
-Custom functions can easily be added. Check the [System overview](https://github.com/dcsan/gitterbot#system-overview)  
- or contact [RIKAI Labs](mailto:dc@rikai.co).
+Custom functions can easily be added. Check the [System overview](https://github.com/dcsan/purdybot#system-overview)
+ or contact [Joe Purdy](mailto:joe@poweredbypurdy.com?subject="Purdybot extension help").
 
 ## Installation instructions
 
-To run GitterBot, you need [Node.js](https://nodejs.org/) before downloading the app.
+To run PurdyBot, you need [Node.js](https://nodejs.org/) before downloading the app.
 
 
 ### Mac / Linux
@@ -61,11 +45,11 @@ To run GitterBot, you need [Node.js](https://nodejs.org/) before downloading the
 
 - To download the app, clone the repository the bot is in:
 
-        git clone git@github.com:dcsan/gitterbot.git
+        git clone git@github.com:joepurdy/purdybot.git
 
 - Run the following commands to run the app:
 
-        cd gitterbot
+        cd purdybot
         cd nap
         cp dot-EXAMPLE.env dot.env
         nodemon app.js
@@ -87,11 +71,11 @@ To install Node.js on Windows, [follow these instructions](http://blog.teamtreeh
 
 - To download the app, clone the repository the bot is in:
 
-        git clone https://github.com/dcsan/gitterbot.git
+        git clone https://github.com/joepurdy/purdybot.git
 
 -  Run the following commands to run the app:
 
-        cd gitterbot
+        cd purdybot
         cd nap
         ren dot-EXAMPLE.env dot.env
         nodemon app.js
@@ -118,13 +102,6 @@ To run the tests with the right configs
 
     $ bin/test.sh
 
-
-# Wiki Content
-The wiki content is pulled in from FCC's wiki using a git submodule. But then we just copy it and commit it back to the main app as submodules are nasty to deal with on production servers.
-
-    bin/wiki-update.sh
-
-
 # System Overview
 
 ### data/RoomData.js
@@ -135,11 +112,6 @@ This needs to be changed so you would only join your own rooms, otherwise develo
 ### lib/bot/BotCommands.js
 This is where you add things that the bot can do. Some commands are broken into separate files such as `cmds/thanks` and `cmds/about`.
 Each command gets a `input` which is a blob of data including what the user entered, and a bot instance.
-
-TODO: Remove this 
-### KBase.js
-The Knowledge base. This is an interface to all the data in the wiki.
-
 
 ### RoomMessages.js
 
@@ -211,13 +183,6 @@ In `RoomMessages.js` we also have a table of regex and matching functions, and m
 
 ## environment notes
 
-### wiki data
-we use git submodules for some wiki data. to get these submodules you would do:
-
-    git submodule init
-    git submodule update
-
-
 ### ES6 and iojs
 
 We downgraded the app to use basic node, so it should run even without iojs.
@@ -240,12 +205,6 @@ iojs -v
     // should be at least v2.4.0
 ```
 
-# Contributing
-have a look at the [HelpWanted](https://github.com/dcsan/gitterbot/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)  label issues and consider making some first steps!
-the labels, P1 = priority one, and 'S' means a small task, so good places to start.
-https://waffle.io/dcsan/gitterbot
-
-
 # Chat to us!
 
-Ping me @dcsan in the [gitterbot chatroom](https://gitter.im/dcsan/gitterbot) if you get stuck.
+Ping me @joepurdy in the [purdybot chatroom](https://gitter.im/joepurdy/purdybot) if you get stuck.
