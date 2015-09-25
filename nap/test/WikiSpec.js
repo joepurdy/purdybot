@@ -18,10 +18,10 @@ Utils.clog()
 
 describe("Wiki", function () {
 
-    it("should load the KBase", function() {
-        var allData = KBase.initSync();
-        expect(allData).to.be.instanceOf(Array);
-    });
+    //it("should load the KBase", function() {
+    //    var allData = KBase.initSync();
+    //    expect(allData).to.be.instanceOf(Array);
+    //});
 
     it("should find css page", function () {
         var entry = KBase.getTopicData("css-selectors");

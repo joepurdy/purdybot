@@ -5,7 +5,6 @@ var assert = require("chai").assert;
 var clc = require("cli-color");
 var _ = require('lodash-node');
 var AppConfig = require("../../config/AppConfig");
-var MDNlinks = require('../../data/seed/bonfireMDNlinks');
 
 var TextLib = require("./TextLib.js");
 

@@ -2,7 +2,7 @@
 "use strict";
 
 var GBot = require("../../../lib/bot/GBot.js");
-    //KBase = require("../../bot/KBase"),
+
 var Utils = require("../../../lib/utils/Utils"),
     //AppConfig = require("../../../config/AppConfig"),
     HttpWrap = require("../../../lib/utils/HttpWrap");
@@ -29,24 +29,24 @@ var TextLib = require("../../../lib/utils/TextLib");
 
 var thanksCommands = {
 
-    messages: {
-        wikiHint: function(fromUser) {
-            var wikiUrl = "(https://github.com/freecodecamp/freecodecamp/wiki/wiki-style-guide)";
-            var msg = "\n> hey @" + fromUser + " if you found this info helpful :point_right: *[consider adding a wiki article!]" + wikiUrl + "*";
-            return msg;
-        }
-    },
+    //messages: {
+    //    wikiHint: function(fromUser) {
+    //        var wikiUrl = "(https://github.com/freecodecamp/freecodecamp/wiki/wiki-style-guide)";
+    //        var msg = "\n> hey @" + fromUser + " if you found this info helpful :point_right: *[consider adding a wiki article!]" + wikiUrl + "*";
+    //        return msg;
+    //    }
+    //},
 
-    thanks: function(input, bot) {
-        Utils.hasProperty(input, "message", "thanks expects an object");
+    givepizza: function(input, bot) {
+        Utils.hasProperty(input, "message", "givespizza expects an object");
         //Utils.tlog("thanks", input);
 
         var mentions, output, fromUser, toUser, toUserMessage;
         mentions = input.message.model.mentions;
         if (mentions && mentions.length === 0) {
-            Utils.warn("thanks", "without any mentions", input.message.model);
+            Utils.warn("givepizza", "without any mentions", input.message.model);
             return null;
-        } // just 'thanks' in a message
+        } // just 'givepizza' in a message
 
         fromUser = input.message.model.fromUser.username.toLowerCase();
         var options = {
@@ -68,43 +68,16 @@ var thanksCommands = {
 
         if (namesList[0] != null) {
             toUserMessage = namesList.join(" and @");
-            output = "> " + fromUser + " sends brownie points to @" + toUserMessage;
-            output += " :sparkles: :thumbsup: :sparkles: ";
+            output = "> " + fromUser + " gives pizza to @" + toUserMessage;
+            output += " :metal: :rage1: :metal: ";
             // output += BotCommands.messages.wikiHint(fromUser);
             return output;
         } else {
-            output = "> sorry " + fromUser + ", you can't send brownie points to yourself!";
-            output += " :sparkles: :sparkles: ";
+            output = "> sorry " + fromUser + ", you can't give pizza to yourself!";
+            output += " :fire: :fire: ";
             return output;
         }
     },
-    
-    about: function(input, bot) {
-        // var mentioned = InputWrap.mentioned(input);
-        var mentions, them, name;
-
-        mentions = input.message.model.mentions;
-        them = mentions[0];
-        if (!them) {
-            Utils.warn("about without any mentions", input.message.model);
-            return "you need to ask about @someone!";
-        }
-        name = them.screenName.toLowerCase();
-        var options = {
-            method: 'GET',
-            input: input,
-            bot: bot
-        };
-
-        var apiPath = '/api/users/about?username=' + name;
-        HttpWrap.callApi(apiPath, options, thanksCommands.showInfoCallback);
-    },
-
-    // called back from apiCall so can't use Global GBot here
-    // blob:
-    //      response
-    //      bot
-    //      input
 
     showInfoCallback: function(blob) {
         //Utils.clog('thanks>', "showInfoCallback>", blob);
@@ -136,7 +109,7 @@ var thanksCommands = {
             var bio = blob.response.about.bio || "no bio set";
 
             var uri = "http://www.freecodecamp.com/" + username;
-            str = "> :star: " + about.browniePoints + " | @" + username + " | ";
+            str = "> :pizza: " + about.browniePoints + " | @" + username + " | ";
             str += TextLib.mdLink(uri, uri);
         } catch (err) {
             Utils.error("cant create response from API callback", err);

@@ -9,17 +9,12 @@ var AppConfig = require("../config/AppConfig"),
     GBot = require("../lib/bot/GBot"),
     Utils = require("../lib/utils/Utils"),
     TestHelper = require("./TestHelper"),
-    KBase = require("../lib/bot/KBase");
 
 function clog(msg, obj) {
     Utils.clog("KbaseSpec>", msg, obj);
 }
 
 describe("GBot", function () {
-
-    it("should load the KBase before other stuff", function () {
-        var kb = KBase.initSync();
-    });
 
     it("would be nice if regexes did not give me a headache", function () {
         var res = "help bootstrap".match(/(help|wiki|check) (.*)/);

@@ -7,9 +7,7 @@ var Gitter = require("node-gitter"),
 var AppConfig = require("../../config/AppConfig"),
     RoomData = require("../../data/RoomData"),
     Utils = require("../../lib/utils/Utils"),
-    KBase = require("../../lib/bot/KBase"),
-    BotCommands = require("../../lib/bot/BotCommands"),
-    Bonfires = require("../app/Bonfires");
+    BotCommands = require("../../lib/bot/BotCommands");
 
 var RoomMessages = require("../../data/rooms/RoomMessages");
 
@@ -25,12 +23,10 @@ var GBot = {
     init: function() {
         var that = this;
         // TODO refresh and add oneToOne rooms
-        KBase.initSync();
         this.roomList = [];
         this.listReplyOptions = [];
         this.gitter = new Gitter(AppConfig.token);
         this.joinKnownRooms();
-        this.joinBonfireRooms();
 
         // listen to other rooms for 1:1
         if (AppConfig.supportDmRooms) {
@@ -328,14 +324,6 @@ var GBot = {
                 that.listenToRoom(room);
             });
         }, apiWait);
-    },
-
-    joinBonfireRooms: function() {
-        var that = this;
-        Bonfires.allDashedNames().map(function(name) {
-            var roomUrl = AppConfig.getBotName() + "/" + name;
-            that.delayedJoin(roomUrl);
-        });
     },
 
     // uses gitter helper to fetch the list of rooms this user is "in"

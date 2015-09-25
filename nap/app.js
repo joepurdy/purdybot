@@ -23,8 +23,8 @@ var GBot = require("./lib/bot/GBot"),
     routes = require("./lib/app/routes.js");
 
 //should be loaded before Bonfires for wikihints
-var KBase = require('./lib/bot/KBase');
-var Bonfires = require('./lib/app/Bonfires');
+//var KBase = require('./lib/bot/KBase');
+//var Bonfires = require('./lib/app/Bonfires');
 
 // Utils.cls();
 
