@@ -96,7 +96,7 @@ var BotCommands = {
                 }
 
             default:
-                return "you called??";
+                return "![no response](https://http.cat/444)";
         }
     },
 
