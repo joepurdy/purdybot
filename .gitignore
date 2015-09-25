@@ -1,3 +1,7 @@
-.idea
+### JetBrains
 *.iml
+.idea/
+
+### Environment files
+
 .env

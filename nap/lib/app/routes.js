@@ -9,7 +9,6 @@
 var AppConfig = require('../../config/AppConfig'),
     Rooms = require('../../lib/app/Rooms.js'),
     Utils = require('../../lib/utils/Utils'),
-    //Bonfires = require('./Bonfires'),
     RoomData = require('../../data/RoomData');
 
 var GitterHelper = require('../../lib/gitter/GitterHelper');
@@ -113,20 +112,6 @@ var Router = {
             //for now force login so we dont get webspammed by crawlers
             if (!req.user) return res.redirect('/');
             console.log("req.user", req.user);
-
-            //var rooms = RoomData.rooms('camperbot').filter( function(rm) {
-            //    return rm.isBonfire;
-            //});
-            //console.log(rooms);
-            //
-            //res.render('rooms', {
-            //    user: req.user,
-            //    who: AppConfig.who(req),
-            //    token: req.session.token,
-            //    rooms: rooms,
-            //    //bonfires: Bonfires.data.challenges,
-            //    topicDmUri: AppConfig.topicDmUri()
-            //});
         });
 
         app.get('/rooms/update', function(req, res) {

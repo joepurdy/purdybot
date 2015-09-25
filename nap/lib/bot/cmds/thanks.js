@@ -2,7 +2,7 @@
 "use strict";
 
 var GBot = require("../../../lib/bot/GBot.js");
-    //KBase = require("../../bot/KBase"),
+
 var Utils = require("../../../lib/utils/Utils"),
     //AppConfig = require("../../../config/AppConfig"),
     HttpWrap = require("../../../lib/utils/HttpWrap");
@@ -78,33 +78,6 @@ var thanksCommands = {
             return output;
         }
     },
-    
-    //about: function(input, bot) {
-    //    // var mentioned = InputWrap.mentioned(input);
-    //    var mentions, them, name;
-    //
-    //    mentions = input.message.model.mentions;
-    //    them = mentions[0];
-    //    if (!them) {
-    //        Utils.warn("about without any mentions", input.message.model);
-    //        return "you need to ask about @someone!";
-    //    }
-    //    name = them.screenName.toLowerCase();
-    //    var options = {
-    //        method: 'GET',
-    //        input: input,
-    //        bot: bot
-    //    };
-    //
-    //    var apiPath = '/api/users/about?username=' + name;
-    //    HttpWrap.callApi(apiPath, options, thanksCommands.showInfoCallback);
-    //},
-
-    // called back from apiCall so can't use Global GBot here
-    // blob:
-    //      response
-    //      bot
-    //      input
 
     showInfoCallback: function(blob) {
         //Utils.clog('thanks>', "showInfoCallback>", blob);

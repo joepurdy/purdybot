@@ -18,7 +18,7 @@ var AppConfig = {
     // so bot doesnt get in a loop replying itself
     botlist: ["bothelp", "camperbot", "purdybot"],
     webuser: "webuser",
-    wikiHost: "https://github.com/freecodecamp/freecodecamp/wiki/",
+    wikiHost: "",
     gitterHost: "https://gitter.im/",
     botVersion: "0.0.11",
     MAX_WIKI_LINES: 20,
@@ -103,12 +103,21 @@ var AppConfig = {
 
 
 var envConfigs = {
+
+    demobot: {
+        botname: "demobot",
+        appHost: "http://localhost:7000",
+        apiServer: "freecodecamp.com",
+        appRedirectUrl: "http://localhost:7891/login/callback",
+    },
+
     local: {
         botname: "purdybot",
         appHost: "http://localhost:7000",
         apiServer: "freecodecamp.com",
         appRedirectUrl: "http://localhost:7891/login/callback"
     },
+
     prod: {
         botname: "purdybot",
         appHost: "http://bot.poweredbypurdy.com",

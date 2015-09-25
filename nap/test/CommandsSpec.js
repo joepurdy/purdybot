@@ -9,13 +9,7 @@ var assert = require("chai").assert,
 var GBot = require("../lib/bot/GBot.js"),
     BotCommands = require("../lib/bot/BotCommands"),
     Utils = require("../lib/utils/Utils"),
-    KBase = require("../lib/bot/KBase.js"),
     TestHelper = require('./TestHelper');
-
-
-function clog(msg, obj) {
-    Utils.clog("KbaseSpec>", msg, obj);
-}
 
 function checkInput(text) {
     var msg, res;
@@ -26,10 +20,6 @@ function checkInput(text) {
 
 
 describe("Commands", function () {
-
-    //it("should load the KBase", function() {
-    //    var p = KBase.initSync();
-    //});
 
     it("command: menu", function () {
         var res = Utils.splitParams("menu");
