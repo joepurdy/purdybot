@@ -1,5 +1,7 @@
 
 ## Airtable recommendation
+
+[![Join the chat at https://gitter.im/joepurdy/purdybot](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/joepurdy/purdybot?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 update: I'm using Airtable to store some data. 
 It's a very cool 'google docs meets DB' service and if you sign up here, I'll get some credit on my account. Thanks!
 https://airtable.com/invite/bV2PbVkk
