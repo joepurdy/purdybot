@@ -20,7 +20,7 @@ var AppConfig = {
     webuser: "webuser",
     wikiHost: "",
     gitterHost: "https://gitter.im/",
-    botVersion: "0.0.11",
+    botVersion: "0.0.12",
     MAX_WIKI_LINES: 20,
     botNoiseLevel: 1,
 
