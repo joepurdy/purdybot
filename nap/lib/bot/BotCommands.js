@@ -114,6 +114,14 @@ var BotCommands = {
             case 'open the pod bay doors':
                 var username = input.message.model.fromUser.username;
                 return "I'm sorry, " + "@" + username + ". I'm afraid I can't do that.";
+
+            case 'sing it for me':
+                var output = "It's called \"Daisy\".";
+                output += newline+"https://soundcloud.com/joe-purdy-786791700/deactivation-of-hal-9000/s-8JL06";
+                return output;
+
+            case 'whats the problem':
+                return "I think you know what the problem is just as well as I do.";
         }
     },
     
