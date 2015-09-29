@@ -65,7 +65,7 @@ if (AppConfig.serverEnv == 'demobot') {
         purdybot: [
             // change this to be a room your user is already in
             {
-                name: "FreeCodeCamp/FreeCodeCamp"
+                name: "FreeCodeCamp/Casual"
             },
             {
                 name: "joepurdy/purdybot"
