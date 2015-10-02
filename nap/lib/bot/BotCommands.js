@@ -127,13 +127,13 @@ var BotCommands = {
             case 'whats the problem':
                 return "I think you know what the problem is just as well as I do.";
 
-            case 'what does it say?':
+            case 'what does it say':
                return "Danger, Will Robinson, danger.";
 
             case 'R2D2':
                return "R2D2 where are you?";
 
-            case 'what are you doing hiding back there?':
+            case 'what are you doing hiding back there':
                return "It wasn't my fault, sir, please don't deactivate me. I told him not to go, but he's faulty, malfunctioning. Kept babbling on about his mission.";
         }
     },
