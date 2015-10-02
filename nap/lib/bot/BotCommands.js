@@ -92,6 +92,8 @@ var BotCommands = {
                     return "^.^ I love you too @" + username;
                 } else if (username == "jondcoleman") {
                    return "Thx @" + username + ", love you too!"
+                } else if (username == "iheartkode") { 
+                    return "Oh, I love you so much @" + username;
                 } else {
                     return "0.0 Maybe we should just stay friends @" + username;
                 }
