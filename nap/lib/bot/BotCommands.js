@@ -142,7 +142,8 @@ var BotCommands = {
     
     heygirl: function() {
         return "http://40.media.tumblr.com/tumblr_lx7125u4h01r8lg7to1_500.png"
-    }
+    },
+
     pbotversion: function(){
         return "botVersion: " + AppConfig.botVersion;
     },
