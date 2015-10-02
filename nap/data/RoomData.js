@@ -53,7 +53,7 @@ if (AppConfig.serverEnv == 'demobot') {
         purdybot: [
             // change this to be a room your user is already in
             {
-                name: "joepurdy/purdybot"
+                name: "joepurdy/pbot-testing"
             }
         ]
     };
@@ -65,7 +65,7 @@ if (AppConfig.serverEnv == 'demobot') {
         purdybot: [
             // change this to be a room your user is already in
             {
-                name: "FreeCodeCamp/Casual"
+                name: "iheartkode/AfterSchoolSpecial"
             },
             {
                 name: "joepurdy/purdybot"
