@@ -148,9 +148,19 @@ var BotCommands = {
                 
         }
     },
-    
+    // Display a random hey girl pic :)
     heygirl: function() {
-        return "http://40.media.tumblr.com/tumblr_lx7125u4h01r8lg7to1_500.png"
+        var heyGirlPics = [
+          "![heygirl](http://40.media.tumblr.com/tumblr_lx7125u4h01r8lg7to1_500.png)",
+          "![heygirl](http://41.media.tumblr.com/tumblr_lwozx50imL1r8lg7to1_400.png)",
+          "![heygirl](https://s-media-cache-ak0.pinimg.com/736x/72/a6/56/72a656c0cfc0b6bc842499f31d9de1a0.jpg)",
+          "![heygirl](http://i.imgur.com/jqSPp.jpg)",
+          "![heygirl](https://s-media-cache-ak0.pinimg.com/236x/6b/77/09/6b770999b27568d11450eb440d26537d.jpg)",
+          "![heygirl](http://www.intomobile.com/wp-content/uploads/2014/01/proggosling.jpg)",
+          "![heygirl](https://s-media-cache-ak0.pinimg.com/236x/ca/32/7d/ca327d4bcb4e216bb072cffacacf6f7b.jpg)"        
+        ];
+        
+        return _.sample(heyGirlPics);
     },
 
     pbotversion: function(){
