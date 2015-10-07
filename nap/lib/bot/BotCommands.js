@@ -148,7 +148,7 @@ var BotCommands = {
                 
         }
     },
-    // Display a random hey girl pic :)
+    // Display a random hey girl pic :) created by @iheartkode
     heygirl: function() {
         var heyGirlPics = [
           "![heygirl](http://40.media.tumblr.com/tumblr_lx7125u4h01r8lg7to1_500.png)",
@@ -157,9 +157,10 @@ var BotCommands = {
           "![heygirl](http://i.imgur.com/jqSPp.jpg)",
           "![heygirl](https://s-media-cache-ak0.pinimg.com/236x/6b/77/09/6b770999b27568d11450eb440d26537d.jpg)",
           "![heygirl](http://www.intomobile.com/wp-content/uploads/2014/01/proggosling.jpg)",
-          "![heygirl](https://s-media-cache-ak0.pinimg.com/236x/ca/32/7d/ca327d4bcb4e216bb072cffacacf6f7b.jpg)"        
+          "Hey Girl, Did you know iHeartkode developed this command?",     
+          "![heygirl](https://s-media-cache-ak0.pinimg.com/236x/ca/32/7d/ca327d4bcb4e216bb072cffacacf6f7b.jpg)"
+             
         ];
-        
         return _.sample(heyGirlPics);
     },
 
