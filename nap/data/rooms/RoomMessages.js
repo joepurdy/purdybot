@@ -14,6 +14,10 @@ var _ = require('lodash-node');
 // TODO - add these to all of the rooms
 // this is easier for people to add content to as they don't have to add to two lists
 var AllRoomMessages = [
+    {
+       regex: /hugs and kisses/i,
+       text: "this is hugs and kisses @0x0936"
+    },
     //{
     //    // regex: /help.*bonfire:?s?[.?]$/i,
     //    regex: /.*help.*bonfire:?s?/i,
