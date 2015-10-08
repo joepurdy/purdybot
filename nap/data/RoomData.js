@@ -68,6 +68,9 @@ if (AppConfig.serverEnv == 'demobot') {
                 name: "iheartkode/AfterSchoolSpecial"
             },
             {
+                name: "FreeCodeCamp/Casual"
+            },
+            {
                 name: "joepurdy/purdybot"
             }
         ]
