@@ -148,6 +148,7 @@ var BotCommands = {
                 
         }
     },
+
     // Display a random hey girl pic :) created by @iheartkode
     heygirl: function() {
         var heyGirlPics = [
@@ -162,6 +163,28 @@ var BotCommands = {
              
         ];
         return _.sample(heyGirlPics);
+    },
+
+    coffee: function() {
+        var coffeePics = [
+          "![coffee](http://i.imgur.com/KShAsNY.jpg)",
+          "![coffee](http://i.imgur.com/kxZsek7.jpg)",
+          "![coffee](http://i.imgur.com/8tax2.jpg)",
+          "![coffee](http://i.imgur.com/AvVTY2C.jpg)",
+          "![coffee](http://i.imgur.com/jN2Wo38.jpg)",
+          "![coffee](http://i.imgur.com/cUXHmPM.gif)",     
+          "![coffee](http://theskincompany.com/blog/wp-content/uploads/2012/10/cupofjoe2.jpg)",
+          "![coffee](https://media.giphy.com/media/YNYSyuGCHT7he/giphy.gif)",
+          "![coffee](https://a.disquscdn.com/get?url=http%3A%2F%2Fviralpirate.com%2Fwp-content%2Fuploads%2F2015%2F05%2FKe7XsN8.gif&key=95svFOoFVb_AZz0kJ_3rUg)",
+          "![coffee](http://i.imgur.com/emqfGvW.gif)",
+          "![coffee](http://i.imgur.com/dOJGm61.gif)",
+          "![coffee](http://i.imgur.com/ZS7N47x.gif)",
+          "![coffee](http://media.giphy.com/media/SqP6xkizrTNO8/giphy.gif)",
+          "![coffee](http://i.imgur.com/35PnUDW.gif)",
+          "![coffee](http://i.imgur.com/lXxKbfX.gif)",
+          "![coffee](http://i.imgur.com/wBhQdkA.jpg?fb)"
+        ];
+        return _.sample(coffeePics);
     },
 
     pbotversion: function(){
