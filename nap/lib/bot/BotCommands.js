@@ -170,7 +170,7 @@ var BotCommands = {
           "![coffee](http://i.imgur.com/KShAsNY.jpg)",
           "![coffee](http://i.imgur.com/kxZsek7.jpg)",
           "![coffee](http://i.imgur.com/8tax2.jpg)",
-          "![coffee](http://i.imgur.com/AvVTY2C.jpg)",
+          // "![hotcoffee](http://i.imgur.com/AvVTY2C.jpg)",
           "![coffee](http://i.imgur.com/jN2Wo38.jpg)",
           "![coffee](http://i.imgur.com/cUXHmPM.gif)",     
           "![coffee](http://theskincompany.com/blog/wp-content/uploads/2012/10/cupofjoe2.jpg)",
