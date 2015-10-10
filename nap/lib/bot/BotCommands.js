@@ -170,6 +170,15 @@ var BotCommands = {
         return msg;
     },
 
+    pbotversion: function(){
+        return "botVersion: " + AppConfig.botVersion;
+    },
+
+    pbotenv: function(input, bot) {
+        var str = "env: " + AppConfig.serverEnv;
+        return str;
+    },
+
     init: function (bot) {
         // FIXME - this is sketchy storing references like a global
         // called from the bot where we don't always have an instance
