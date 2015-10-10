@@ -74,9 +74,12 @@ var BotCommands = {
     },
 
     '@purdybot': function(input) {
+        var username = input.message.model.fromUser.username;
+        if (input.params == "" || input.params == null) {
+            return "Yo @" + username +"! What's up?";
+        }
         switch (input.params) {
             case 'i love you':
-                var username = input.message.model.fromUser.username;
                 if (username == "joepurdy") {
                     return "^.^ I love you too @" + username;
                 } else if (username == "Shifthawke") {
@@ -92,7 +95,6 @@ var BotCommands = {
                 }
 
             case 'open the pod bay doors':
-                var username = input.message.model.fromUser.username;
                 return "I'm sorry, " + "@" + username + ". I'm afraid I can't do that.";
 
             case 'sing it for me':
