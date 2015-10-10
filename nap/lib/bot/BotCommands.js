@@ -73,17 +73,8 @@ var BotCommands = {
         return res;
     },
 
-    pbot: function(input, bot) {
+    '@purdybot': function(input) {
         switch (input.params) {
-            case 'version':
-                return this.pbotversion(input, bot);
-
-            case 'status':
-                Utils.log("input", input);
-                var status = this.pbotstatus(input, bot);
-                Utils.clog('status', status);
-                return status;
-
             case 'i love you':
                 var username = input.message.model.fromUser.username;
                 if (username == "joepurdy") {
@@ -96,25 +87,6 @@ var BotCommands = {
                     return "Oh, I love you so much @" + username;
                 } else if (username == 'jurgenzz') {
                     return "Get lost @" +username;
-                } else {
-                    return "0.0 Maybe we should just stay friends @" + username;
-                }
-
-            default:
-                return "![no response](https://http.cat/444)";
-        }
-    },
-
-    '@purdybot': function(input) {
-        switch (input.params) {
-            case 'i love you':
-                var username = input.message.model.fromUser.username;
-                if (username == "joepurdy") {
-                    return "^.^ I love you too @" + username;
-                } else if (username == "Shifthawke") {
-                    return "^.^ I love you too @" + username;
-                } else if (username == "jondcoleman") {
-                   return "Thx @" + username + ", love you too!"
                 } else {
                     return "0.0 Maybe we should just stay friends @" + username;
                 }
@@ -145,6 +117,9 @@ var BotCommands = {
                 
             case 'im batman':                
                 return "https://www.youtube.com/watch?v=Y85wj59S94U";
+
+            default:
+                return "![no response](https://http.cat/444)";
                 
         }
     },
@@ -187,16 +162,16 @@ var BotCommands = {
         return _.sample(coffeePics);
     },
 
-    pbotversion: function(){
-        return "botVersion: " + AppConfig.botVersion;
-    },
-
     pbotstatus: function (input, bot) {
         var msg = "All bot systems are go!  \n";
         msg += this.pbotversion() + newline;
         msg += this.pbotenv() + newline;
         msg += "botname: " + AppConfig.getBotName() + newline;
         return msg;
+    },
+
+    pbotversion: function(){
+        return "botVersion: " + AppConfig.botVersion;
     },
 
     pbotenv: function(input, bot) {
@@ -249,7 +224,7 @@ _.merge(BotCommands, thanks);
 
 //aliases
 
-//BotCommands.pbot = BotCommands.@purdybot;
+BotCommands.pbot = BotCommands['@purdybot'];
 
 
 // TODO - some of these should be filtered/as private
