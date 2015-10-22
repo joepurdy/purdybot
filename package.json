@@ -6,6 +6,7 @@
   "description": "A mischievous robot with an agenda",
   "dependencies": {
     "hubot": "^2.16.0",
+    "hubot-decides": "0.0.7",
     "hubot-diagnostics": "0.0.1",
     "hubot-gitter2": "^0.1.3",
     "hubot-google-images": "^0.2.2",
