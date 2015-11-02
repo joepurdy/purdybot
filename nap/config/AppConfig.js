@@ -107,21 +107,21 @@ var envConfigs = {
     demobot: {
         botname: "demobot",
         appHost: "http://localhost:7000",
-        apiServer: "freecodecamp.com",
+        apiServer: "www.freecodecamp.com",
         appRedirectUrl: "http://localhost:7891/login/callback",
     },
 
     local: {
         botname: "purdybot",
         appHost: "http://localhost:7000",
-        apiServer: "freecodecamp.com",
+        apiServer: "www.freecodecamp.com",
         appRedirectUrl: "http://localhost:7891/login/callback"
     },
 
     prod: {
         botname: "purdybot",
         appHost: "http://bot.poweredbypurdy.com",
-        apiServer: "freecodecamp.com",
+        apiServer: "www.freecodecamp.com",
         appRedirectUrl: "http://bot.poweredbypurdy.com/login/callback"
     }
 };
