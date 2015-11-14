@@ -31,4 +31,4 @@ module.exports = (robot) ->
       praise = praises[Math.floor(Math.random() * (praises.length - 0) + 0)]
 
       if (probability == 1)
-        msg.send praise
+#        msg.send praise
