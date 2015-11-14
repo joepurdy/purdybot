@@ -28,6 +28,3 @@ module.exports = (robot) ->
 
   robot.respond /I\'?m batman/i, (res) ->
     res.send "https://www.youtube.com/watch?v=Y85wj59S94U"
-
-  robot.hear /whoami/i, (res) ->
-    res.send res.message.user.name
