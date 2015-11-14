@@ -10,7 +10,7 @@
     "hubot-conspire": "^1.0.0",
     "hubot-decides": "0.0.8",
     "hubot-diagnostics": "0.0.1",
-    "hubot-gitter2": "^0.1.3",
+    "hubot-gitter2": "git://github.com/joepurdy/hubot-gitter2.git#develop",
     "hubot-google-images": "^0.2.2",
     "hubot-google-translate": "^0.2.0",
     "hubot-help": "^0.1.1",
