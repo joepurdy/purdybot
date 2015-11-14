@@ -1,5 +1,4 @@
 [
-  "hubot-diagnostics",
   "hubot-help",
   "hubot-heroku-keepalive",
   "hubot-google-images",
@@ -8,8 +7,8 @@
   "hubot-maps",
   "hubot-redis-brain",
   "hubot-rules",
-  "hubot-shipit",
   "hubot-decides",
   "hubot-conspire",
-  "hubot-bro"
+  "hubot-codinglove",
+  "hubot-meowme"
 ]
