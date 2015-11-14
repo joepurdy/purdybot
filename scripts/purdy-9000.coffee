@@ -28,7 +28,7 @@ module.exports = (robot) ->
      res.send "Opening #{doorType} doors for you now @#{user}"
 
   robot.respond /what\'?s the problem/i, (res) ->
-     res.send "I think you know what the problem is just as well as I do."
+    res.send "I think you know what the problem is just as well as I do."
 
   robot.respond /sing it for me/i, (res) ->
     res.send "It's called \"Daisy\".\nhttps://soundcloud.com/joe-purdy-786791700/deactivation-of-hal-9000/s-8JL06"
