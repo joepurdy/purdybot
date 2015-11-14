@@ -58,7 +58,7 @@ it's suggested that you search for a dedicated guide focused on your OS.
 
 ### Scripting
 
-An example script is included at `scripts/example.coffee`, so check it out to
+Purdybot's default scripts are located in the `scripts/` directory, so check them out to
 get started, along with the [Scripting Guide](scripting-docs).
 
 For many common tasks, there's a good chance someone has already one to do just
