@@ -1,5 +1,0 @@
-*.log
-.idea
-.env
-*.env
-!dot-EXAMPLE.env
